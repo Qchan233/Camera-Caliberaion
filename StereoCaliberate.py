@@ -50,6 +50,12 @@ ret_r, cameraMatrix_r, dist_r, rvecs_r, tvecs_r = cv2.calibrateCamera(objpoints,
 retval, cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, R, T, E, F = cv2.stereoCalibrate(objpoints, imgpoints_l, \
 	imgpoints_r, cameraMatrix_l, dist_l, cameraMatrix_r, dist_r, imgsize, cv2.CALIB_USE_INTRINSIC_GUESS, criteria = criteria2)
 
+print ("Rotation Matrix:", R, "\n\n")
+print ("Translation Vector:", T, "\n\n")
+print ("Essential Matrix:", E, "\n\n")
+print ("Fundamtel Matrix:", F, "\n\n")
+
+
 R1 = R2 = np.empty([3,3])
 P1 = P2 = np.empty([3,4])
 
