@@ -96,7 +96,3 @@ for i in range(len(images_l)):
 	rec_r = rec_r[y:y+h, x:x+w]
 	cv2.imwrite('./results/rcalibresult'+str(i)+'.jpg',rec_r)
 
-stereo = cv2.StereoSGBM_create(numDisparities=16, blockSize=5)
-disparity = stereo.compute(gray_l,gray_r)
-plt.imshow(disparity,'gray')
-plt.show()
