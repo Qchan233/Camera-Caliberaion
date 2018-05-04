@@ -60,7 +60,9 @@ print("\n\nRotation Matrix:\n",R)
 print("\n\nTransltion:\n",T)
 print("\n\nEssential Matrix:\n",E)
 print("\n\nFundamental Matrix:\n",F)
-print("\n\nDistortion Coefficients:\n",distCoeffs1,distCoeffs2)
+print("\n\nDistortion Coefficients:\n",distCoeffs1,'\n', distCoeffs2)
+
+print("\n\nBaseline:\n",np.linalg.norm(T))
 
 
 # (width,height)
@@ -79,6 +81,7 @@ right_img_remap = cv2.remap(right, mapR1, mapR2, cv2.INTER_LINEAR)
 cv2.imshow('rectified left',left_img_remap)
 cv2.imshow('rectified right',right_img_remap)
 
+
 cv2.waitKey(0)
 x,y,w,h = roi1
 left_img_remap = left_img_remap[y:y+h, x:x+w]
@@ -86,10 +89,10 @@ left_img_remap = left_img_remap[y:y+h, x:x+w]
 x,y,w,h = roi2
 right_img_remap = right_img_remap[y:y+h, x:x+w]
 
+
 print ("Valid Area:")
 cv2.imshow('rectified left',left_img_remap)
 cv2.imshow('rectified right',right_img_remap)
 
 cv2.waitKey(0)
-
 
